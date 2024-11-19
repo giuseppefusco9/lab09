@@ -28,6 +28,7 @@ public final class SimpleGUIWithFileChooser extends SimpleGUI {
         final JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
         final JTextField txtField = new JTextField();
+        txtField.setEditable(false);
         txtField.setText(getFileController().getPathCurrentFile());
         final JButton selectFile = new JButton();
         selectFile.setText("Browse...");

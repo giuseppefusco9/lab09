@@ -22,22 +22,21 @@ public class SimpleGUI {
     private static final String FRAME_TITLE = "92-simple-mvc-io";
     private static final String BUTTON_CONTENT = "Save";
     private static final int PROPORTION = 2;
-    private final JFrame frame;
+    private final JFrame frame = new JFrame();
     private final Controller fileController = new Controller();
 
     /**
      * Constructor of SimpleGUI(), that sets up the whole view.
      */
     public SimpleGUI() {
-        frame = new JFrame();
         final JPanel canvas = new JPanel();
         canvas.setLayout(new BorderLayout());
         frame.add(canvas, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        final JTextArea text = new JTextArea(10, 20);
-        canvas.add(text, BorderLayout.NORTH);
         final JButton save = new JButton(BUTTON_CONTENT);
         canvas.add(save, BorderLayout.SOUTH);
+        final JTextArea text = new JTextArea(10, 20);
+        canvas.add(text, BorderLayout.CENTER);
         save.addActionListener(new ActionListener() {
 
             @Override
